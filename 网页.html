@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- 声明这是HTML5文档 -->
+<html lang="zh-CN">
+<!-- 网页根元素，lang指定语言为中文 -->
+<head>
+    <!-- 元数据区域：定义网页的基础信息（不直接显示在页面） -->
+    <meta charset="UTF-8">
+    <!-- 设定字符编码为UTF-8，避免中文乱码 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 响应式配置：让网页在手机/电脑等设备上自适应显示 -->
+    <title>申家伟个人网页  </title>
+    <!-- 网页标题（显示在浏览器标签栏） -->
+
+    <!-- 新增样式：控制居中效果 -->
+    <style>
+        /* 1. 清除body默认的边距，让页面更整齐 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "微软雅黑", Arial;
+        }
+
+        /* 2. 控制header盒子：内容居中+盒子自身居中 */
+        .header {
+            /* 让盒子里的文本水平居中 */
+            text-align: center;
+            /* 给盒子加内边距，让内容不贴边（更美观） */
+            padding: 30px 0;
+            /* 限制盒子最大宽度（避免太宽），然后左右自动留白→实现盒子水平居中 */
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 可以给标题和段落加一点样式（可选，让页面更好看） */
+        .header h1 {
+            font-size: 28px;
+            margin: 0 0 10px 0;
+        }
+        .header p {
+            font-size: 16px;
+            color: #666;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+  <!-- 网页内容区域：所有要显示的内容（文字、图片、按钮等）都写在这里 -->
+  <div style="
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 40px;
+    ">
+    <img src="D:/WebDesign/picture/feynman01.jpg" alt="费恩曼" width="300">
+  </div>
+  <div style="
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 15px;
+    text-align: center;
+    ">
+    <p>费曼</p>
+    <p>理论物理学家</p>
+  </div>
+  <div style="
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 40px;
+    ">
+    <p>哔站介绍</p>
+  	<a href=https://www.bilibili.com/video/BV1jx411o7KD>友情链接</div>
+</body></html>
