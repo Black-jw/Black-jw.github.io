@@ -68,5 +68,26 @@
     ">
     <p>哔站介绍</p>
   	<a href=https://www.bilibili.com/video/BV1jx411o7KD>友情链接</div>
+  <!-- 自定义BGM控制按钮 -->
+  <div style="text-align: center; margin: 10px 0;">
+    <button onclick="toggleBGM()">播放/暂停BGM</button>
+  </div>
+
+  <!-- 音频标签（隐藏，通过JS控制） -->
+  <audio id="bgm" src="18 - Berry Big Circus (Piano).m4a" loop>
+  <!-- JS控制逻辑（必须放在body末尾，确保元素加载完成） -->
+  <script>
+    // 获取音频元素
+    const bgm = document.getElementById("bgm");
+    // 播放/暂停切换函数
+    function toggleBGM() {
+      if (bgm.paused) {
+        bgm.play(); // 播放
+      } else {
+        bgm.pause(); // 暂停
+      }
+    }
+  </script>
 </body></html>
+
 
