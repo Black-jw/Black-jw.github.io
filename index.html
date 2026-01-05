@@ -1,102 +1,125 @@
 <!DOCTYPE html>
-<!-- 声明这是HTML5文档 -->
 <html lang="zh-CN">
-<!-- 网页根元素，lang指定语言为中文 -->
 <head>
-    <!-- 元数据区域：定义网页的基础信息（不直接显示在页面） -->
     <meta charset="UTF-8">
-    <!-- 设定字符编码为UTF-8，避免中文乱码 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 响应式配置：让网页在手机/电脑等设备上自适应显示 -->
-    <title>申家伟个人网页  </title>
-    <!-- 网页标题（显示在浏览器标签栏） -->
-
-    <!-- 新增样式：控制居中效果 -->
+    <title>申家伟个人网页</title>
+    <!-- 引入外部字体（可选，提升质感） -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* 1. 清除body默认的边距，让页面更整齐 */
-        body {
+        /* 基础重置+全局样式 */
+        * {
             margin: 0;
             padding: 0;
-            font-family: "微软雅黑", Arial;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Noto Serif SC", "微软雅黑", Arial; /* 替换为更有质感的字体 */
+            background-color: #f8f8f8; /* 柔和的背景色 */
+            color: #333;
+            line-height: 1.6;
         }
 
-        /* 2. 控制header盒子：内容居中+盒子自身居中 */
-        .header {
-            /* 让盒子里的文本水平居中 */
+        /* 头部区域：增加层次感+细节 */
+        .hero-section {
+            background-color: #fff;
+            padding: 60px 20px; /* 增加上下间距 */
             text-align: center;
-            /* 给盒子加内边距，让内容不贴边（更美观） */
-            padding: 30px 0;
-            /* 限制盒子最大宽度（避免太宽），然后左右自动留白→实现盒子水平居中 */
-            max-width: 800px;
-            margin: 0 auto;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* 轻微阴影，区分层次 */
+        }
+        .hero-section img {
+            width: 250px; /* 调整图片大小更协调 */
+            border-radius: 8px; /* 圆角更柔和 */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* 图片加阴影，更立体 */
+            margin-bottom: 30px;
+        }
+        .name-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #222;
+        }
+        .role {
+            font-size: 18px;
+            color: #666;
         }
 
-        /* 可以给标题和段落加一点样式（可选，让页面更好看） */
-        .header h1 {
-            font-size: 28px;
-            margin: 0 0 10px 0;
+        /* 链接区域：美化按钮样式 */
+        .link-section {
+            max-width: 700px;
+            margin: 40px auto;
+            text-align: center;
+            padding: 0 20px;
         }
-        .header p {
+        .link-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .friend-link {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: #7c4dff; /* 紫色主色调，更醒目 */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px; /* 圆角按钮 */
             font-size: 16px;
-            color: #666;
-            margin: 0;
+            transition: background-color 0.3s; /*  hover动画 */
+        }
+        .friend-link:hover {
+            background-color: #6a3dd8; /*  hover加深颜色 */
+        }
+
+        /* BGM按钮：美化样式 */
+        .bgm-control {
+            text-align: center;
+            margin: 20px 0 50px;
+        }
+        .bgm-btn {
+            padding: 8px 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .bgm-btn:hover {
+            background-color: #e0e0e0;
+            border-color: #ccc;
         }
     </style>
 </head>
 <body>
-  <!-- 网页内容区域：所有要显示的内容（文字、图片、按钮等）都写在这里 -->
-  <div style="
-    background-color: #f1f1f1;
-    text-align: center;
-    padding: 40px;
-    ">
-    <img src="feynman01.jpg" alt="费恩曼" width="300">
-  </div>
-  <div style="
-    max-width: 700px;
-    margin: 30px auto;
-    padding: 15px;
-    text-align: center;
-    ">
-    <p>费曼</p>
-    <p>理论物理学家</p>
-  </div>
-  <div style="
-    background-color: #f1f1f1;
-    text-align: center;
-    padding: 40px;
-    ">
-    <p>哔站介绍</p>
-  	<a href=https://www.bilibili.com/video/BV1jx411o7KD>友情链接</a>
-  </div>
-  <!-- 自定义BGM控制按钮 -->
-  <div style="text-align: center; margin: 10px 0;">
-    <button onclick="toggleBGM()">播放/暂停BGM</button>
-  </div>
+    <!-- 头部区域（人物展示） -->
+    <div class="hero-section">
+        <img src="feynman01.jpg" alt="费恩曼">
+        <div class="name-title">费曼</div>
+        <div class="role">理论物理学家</div>
+    </div>
 
-  <!-- 音频标签（隐藏，通过JS控制） -->
-  <audio id="bgm" src="18 - Berry Big Circus (Piano).mp3" loop>
-  <!-- JS控制逻辑（必须放在body末尾，确保元素加载完成） -->
-  <script>
-    // 获取音频元素
-    const bgm = document.getElementById("bgm");
-    const musicBtn = document.getElementById("musicBtn");
-    //初始音乐自动播放
-    bgm.play();
-    // 播放/暂停切换函数
-    function toggleBGM() {
-      if (bgm.paused) {
-        bgm.play(); // 播放
-      } else {
-        bgm.pause(); // 暂停
-      }
-    }
-  </script>
-</body></html>
+    <!-- 链接区域 -->
+    <div class="link-section">
+        <div class="link-title">哔站介绍</div>
+        <a href="https://www.bilibili.com/video/BV1jx411o7KD" class="friend-link">友情链接</a>
+    </div>
 
+    <!-- BGM控制 -->
+    <div class="bgm-control">
+        <button class="bgm-btn" onclick="toggleBGM()">播放/暂停BGM</button>
+    </div>
 
-
-
-
-
-
+    <audio id="bgm" src="18 - Berry Big Circus (Piano).mp3" loop>
+    <script>
+        const bgm = document.getElementById("bgm");
+        // 解决自动播放限制（部分浏览器不允许自动播放音频，可加提示）
+        document.addEventListener('click', () => {
+            if (bgm.paused) bgm.play();
+        }, { once: true });
+        
+        function toggleBGM() {
+            bgm.paused ? bgm.play() : bgm.pause();
+        }
+    </script>
+</body>
+</html>
